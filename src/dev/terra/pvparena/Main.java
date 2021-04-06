@@ -1,4 +1,4 @@
-package dev.terra;
+package dev.terra.pvparena;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

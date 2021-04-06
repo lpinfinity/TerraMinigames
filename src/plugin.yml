@@ -3,5 +3,5 @@ version: 1.0
 authors:
   - Eli Watkins
   - McCakeAh
-main: dev.terra.Main
+main: dev.terra.pvparena.Main
 api-version: 1.14

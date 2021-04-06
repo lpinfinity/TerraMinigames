@@ -1,0 +1,7 @@
+name: TerraPVPArena
+version: 1.0
+authors:
+  - Eli Watkins
+  - McCakeAh
+main: dev.terra.Main
+api-version: 1.14

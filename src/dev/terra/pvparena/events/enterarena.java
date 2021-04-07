@@ -28,7 +28,7 @@ public class enterarena implements Listener {
 
             if (x > 16 && x < 66) {
                 if (z > -26 && z <33) {
-                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "replaceitem " + "Entity" + player.getName() + "Container(0)" + " wooden_sword");
+                    player.getInventory().setItem(0, new ItemStack(Material.WOODEN_SWORD, 1));
                 }
             }
 

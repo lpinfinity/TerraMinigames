@@ -1,8 +1,14 @@
 package dev.terra.pvparena;
 
+<<<<<<< HEAD
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+=======
+import dev.terra.pvparena.events.welcomemessage;
+import org.bukkit.ChatColor;
+import dev.terra.pvparena.events.enterarena;
+>>>>>>> 27f243ac6936b801bd05e3d9c7f9ef6bb663203c
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;

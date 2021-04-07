@@ -17,7 +17,7 @@ public class PlayerKillEvent implements Listener {
     public void onPlayerKill(PlayerDeathEvent event) {
         if(event.getEntityType() == EntityType.PLAYER) {
             main.getTotalKills().set(event.getEntity().getPlayer().getUniqueId().toString(), main.getTotalKills().getString(event.getEntity().getPlayer().getUniqueId().toString() + 1));
-            main.getTotalKills().save("");
+            //main.getTotalKills().save("");
         }
     }
 

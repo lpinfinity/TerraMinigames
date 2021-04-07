@@ -18,7 +18,7 @@ public class PlayerKillEvent implements Listener {
     public void onPlayerKill(PlayerDeathEvent event) {
         if(event.getEntityType().equals(EntityType.PLAYER)) {
             if(main.config.getString(event.getEntity().getUniqueId().toString()) == null) {
-                main.config.addDefault(event.getEntity().getUniqueId().toString(), 0);
+                main.config.addDefault(event.getEntity().getUniqueId().toString(), 1);
                 System.out.println("does not exist, creating for " + event.getEntity().getUniqueId().toString());
                 main.config.options().copyDefaults(true);
                 main.saveConfig();

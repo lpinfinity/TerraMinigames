@@ -15,6 +15,7 @@ public class clearinventory implements Listener {
 
         Objects.requireNonNull(event.getEntity().getPlayer()).getInventory().clear();
 
+
     }
 
 

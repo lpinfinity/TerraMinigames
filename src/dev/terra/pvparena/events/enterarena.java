@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 public class enterarena implements Listener {
 
@@ -22,7 +23,11 @@ public class enterarena implements Listener {
 
         if (x > 16 && x < 66) {
             if (z > -26 && z <33) {
-                player.getInventory().setItem(8, new ItemStack(Material.WOODEN_SWORD,1));
+                player.getInventory().setItem(0, new ItemStack(Material.WOODEN_SWORD,1));
+                player.getInventory().setBoots(new ItemStack(Material.LEATHER_BOOTS));
+                player.getInventory().setLeggings(new ItemStack(Material.LEATHER_LEGGINGS));
+                player.getInventory().setChestplate(new ItemStack(Material.LEATHER_CHESTPLATE));
+                player.getInventory().setHelmet(new ItemStack(Material.LEATHER_HELMET));
             }
         }
 

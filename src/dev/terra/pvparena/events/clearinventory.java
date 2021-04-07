@@ -13,6 +13,7 @@ public class clearinventory implements Listener {
     @EventHandler
     public static void onPlayerDeath(PlayerDeathEvent event) {
 
+
         Objects.requireNonNull(event.getEntity().getPlayer()).getInventory().clear();
 
 

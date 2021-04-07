@@ -9,6 +9,8 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        getServer().getPluginManager().registerEvents(new enterarena(),this);
+        getServer().getPluginManager().registerEvents(new welcomemessage(), this);
         System.out.println("TerraPVPArena has started");
     }
 

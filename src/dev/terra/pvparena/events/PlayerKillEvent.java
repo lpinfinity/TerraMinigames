@@ -6,6 +6,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
+import java.util.Objects;
+
 public class PlayerKillEvent implements Listener {
 
     private final Main main;
@@ -23,7 +25,7 @@ public class PlayerKillEvent implements Listener {
                 main.config.options().copyDefaults(true);
                 main.saveConfig();
             }else {
-                main.config.set(event.getEntity().getUniqueId().toString(), main.config.get(event.getEntity().getUniqueId().toString() + 1));
+                main.config.set(event.getEntity().getUniqueId().toString(), Integer.parseInt(Objects.requireNonNull(main.config.getString(event.getEntity().getUniqueId().toString()))) + 1);
                 System.out.println(event.getEntity().getUniqueId().toString());
                 main.saveConfig();
             }

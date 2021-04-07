@@ -21,7 +21,7 @@ public class enterarena implements Listener {
         int y = player.getLocation().getBlockY();
         int z = player.getLocation().getBlockZ();
 
-        if (x > 16 && x < 66) {
+        if (x > 14 && x < 66) {
             if (z > -26 && z <33) {
                 player.getInventory().setItem(0, new ItemStack(Material.WOODEN_SWORD,1));
                 player.getInventory().setBoots(new ItemStack(Material.IRON_BOOTS));

@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
+import java.util.Objects;
+
 public class enterarena implements Listener {
 
     @EventHandler
@@ -31,6 +33,16 @@ public class enterarena implements Listener {
 
         }
 
+        Player player = event.getPlayer();
+        int x = player.getLocation().getBlockX();
+        int y = player.getLocation().getBlockY();
+        int z = player.getLocation().getBlockZ();
+
+        if (x == 14 && z >= -2 && z<= 3) {
+
+            Objects.requireNonNull(event.getPlayer()).getInventory().clear();
+
+        }
     }
 }
 

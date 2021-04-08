@@ -33,10 +33,6 @@ public class enterarena implements Listener {
 
         }
 
-        Player player = event.getPlayer();
-        int x = player.getLocation().getBlockX();
-        int y = player.getLocation().getBlockY();
-        int z = player.getLocation().getBlockZ();
 
         if (x == 14 && z >= -2 && z<= 3) {
 

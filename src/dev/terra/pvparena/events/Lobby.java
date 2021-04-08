@@ -12,18 +12,11 @@ import java.util.Objects;
 public class Lobby implements Listener {
 
     @EventHandler
-    public static void onPlayerDamage(EntityDamageEvent event) {
+    public static void onPlayerDamage(final EntityDamageEvent event) {
 
-        if (event.getEntity() instanceof Player) {
+        if (event.getCause() == EntityDamageEvent.DamageCause.FALL) {
 
-            Player player = (Player) event.getEntity();
-            if (player.isFlying() || player.getAllowFlight()) {
-
-                player.setFlying(false);
-                player.setAllowFlight(false);
-                player.setFallDistance(0);
-
-            }
+            event.setCancelled(true);
 
         }
 

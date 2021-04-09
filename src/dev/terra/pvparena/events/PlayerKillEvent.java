@@ -5,7 +5,10 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 
+import java.util.Collection;
 import java.util.Objects;
 
 public class PlayerKillEvent implements Listener {
@@ -29,6 +32,7 @@ public class PlayerKillEvent implements Listener {
                 System.out.println(event.getEntity().getUniqueId().toString());
                 main.saveConfig();
             }
+            Objects.requireNonNull(event.getEntity().getPlayer()).addPotionEffects((Collection<PotionEffect>) new PotionEffect(PotionEffectType.REGENERATION, 5, 2));
         }
     }
 

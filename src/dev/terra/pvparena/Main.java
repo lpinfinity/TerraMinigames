@@ -1,5 +1,6 @@
 package dev.terra.pvparena;
 
+import dev.terra.pvparena.commands.Kills;
 import dev.terra.pvparena.events.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -19,6 +20,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Lobby(),this);
         getServer().getPluginManager().registerEvents(new ToolsNoDamage(),this);
         getServer().getPluginManager().registerEvents(new Arena(),this);
+
+        this.getCommand("kills").setExecutor(new Kills());
 
         System.out.println("TerraPVPArena has started");
     }

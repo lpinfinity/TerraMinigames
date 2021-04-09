@@ -24,7 +24,7 @@ public class PlayerKillEvent implements Listener {
         if(event.getEntityType().equals(EntityType.PLAYER)) {
             if(main.config.getString(Objects.requireNonNull(event.getEntity().getKiller()).getUniqueId().toString()) == null) {
                 main.config.addDefault(event.getEntity().getKiller().getUniqueId().toString(), 1);
-                System.out.println("does not exist, creating for " + event.getEntity().getKiller().getUniqueId().toString());
+                System.out.println("Data for " + event.getEntity().getKiller().getUniqueId().toString() + " does not exist, creating entry now.");
                 main.config.options().copyDefaults(true);
             }else {
                 main.config.set(event.getEntity().getKiller().getUniqueId().toString(), Integer.parseInt(Objects.requireNonNull(main.config.getString(event.getEntity().getKiller().getUniqueId().toString()))) + 1);

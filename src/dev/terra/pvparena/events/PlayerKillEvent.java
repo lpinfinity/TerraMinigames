@@ -34,6 +34,7 @@ public class PlayerKillEvent implements Listener {
             Objects.requireNonNull(event.getEntity().getKiller().getPlayer()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));
             System.out.println(Objects.requireNonNull(Objects.requireNonNull(event.getEntity().getKiller()).getPlayer()).getName());
             //Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "money give " + event.getEntity().getPlayer().getKiller().getPlayer() + " 2");
+            // TODO: 4/9/2021  activate line 36 before server launch
 
         }
     }

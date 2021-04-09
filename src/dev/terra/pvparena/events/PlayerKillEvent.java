@@ -30,7 +30,7 @@ public class PlayerKillEvent implements Listener {
                 System.out.println(event.getEntity().getKiller().getUniqueId().toString());
             }
             main.saveConfig();
-            Objects.requireNonNull(event.getEntity().getPlayer()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));
+            Objects.requireNonNull(event.getEntity().getKiller().getPlayer()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));
             System.out.println(Objects.requireNonNull(Objects.requireNonNull(event.getEntity().getKiller()).getPlayer()).getName());
 
         }

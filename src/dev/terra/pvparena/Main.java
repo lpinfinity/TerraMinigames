@@ -3,7 +3,6 @@ package dev.terra.pvparena;
 import dev.terra.pvparena.commands.Kills;
 import dev.terra.pvparena.events.*;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {

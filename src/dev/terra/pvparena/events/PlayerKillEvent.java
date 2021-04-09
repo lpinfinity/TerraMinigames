@@ -1,7 +1,6 @@
 package dev.terra.pvparena.events;
 
 import dev.terra.pvparena.Main;
-import org.bukkit.Bukkit;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

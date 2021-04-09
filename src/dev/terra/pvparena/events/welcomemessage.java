@@ -6,9 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import org.bukkit.inventory.Inventory;
-
-import java.net.http.WebSocket;
 import java.util.Objects;
 
 public class welcomemessage implements Listener {

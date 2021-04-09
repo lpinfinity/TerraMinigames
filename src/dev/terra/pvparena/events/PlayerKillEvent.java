@@ -32,6 +32,10 @@ public class PlayerKillEvent implements Listener {
                 main.saveConfig();
             }
             Objects.requireNonNull(event.getEntity().getPlayer()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5, 2));
+            System.out.println(event.getEntity().getPlayer().getName());
+
+            main.getServer().getWorld("world").spawnEntity(event.getEntity().getPlayer().getLocation(), EntityType.ZOMBIE);
+
         }
     }
 

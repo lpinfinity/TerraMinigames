@@ -5,3 +5,7 @@ authors:
   - Micaiah Landis
 main: dev.terra.pvparena.Main
 api-version: 1.14
+commands:
+  kills:
+    description: Gets number of kills for a player
+    usage: /kills <playername(optional)>

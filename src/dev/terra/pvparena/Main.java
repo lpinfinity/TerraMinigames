@@ -21,7 +21,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ToolsNoDamage(),this);
         getServer().getPluginManager().registerEvents(new Arena(),this);
 
-        this.getCommand("kills").setExecutor(new Kills());
+        this.getCommand("kills").setExecutor(new Kills(this));
 
         System.out.println("TerraPVPArena has started");
     }

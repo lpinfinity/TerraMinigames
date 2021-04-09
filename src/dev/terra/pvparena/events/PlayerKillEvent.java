@@ -1,6 +1,8 @@
 package dev.terra.pvparena.events;
 
 import dev.terra.pvparena.Main;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,6 +20,8 @@ public class PlayerKillEvent implements Listener {
         this.main = main;
     }
 
+    Location location = new Location(Bukkit.getWorld("world"), 0, 10, 0);
+
     @EventHandler
     public void onPlayerKill(PlayerDeathEvent event) {
         if(event.getEntityType().equals(EntityType.PLAYER)) {
@@ -25,16 +29,13 @@ public class PlayerKillEvent implements Listener {
                 main.config.addDefault(event.getEntity().getUniqueId().toString(), 1);
                 System.out.println("does not exist, creating for " + event.getEntity().getUniqueId().toString());
                 main.config.options().copyDefaults(true);
-                main.saveConfig();
             }else {
                 main.config.set(event.getEntity().getUniqueId().toString(), Integer.parseInt(Objects.requireNonNull(main.config.getString(event.getEntity().getUniqueId().toString()))) + 1);
                 System.out.println(event.getEntity().getUniqueId().toString());
-                main.saveConfig();
             }
-            Objects.requireNonNull(event.getEntity().getPlayer()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5, 2));
+            main.saveConfig();
+            event.getEntity().getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));
             System.out.println(event.getEntity().getPlayer().getName());
-
-            main.getServer().getWorld("world").spawnEntity(event.getEntity().getPlayer().getLocation(), EntityType.ZOMBIE);
 
         }
     }

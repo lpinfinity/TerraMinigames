@@ -25,6 +25,7 @@ public class Arena implements Listener {
 
                 Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp" + event.getEntity().getName() + "35 8 0");
 
+
             }
 
 

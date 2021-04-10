@@ -23,7 +23,7 @@ public class Arena implements Listener {
 
             if (x == 16 && y == 8 && z >= -2 && z <= 3){
 
-                (Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp" + Entity + "35 8 0"));
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp" + event.getEntity().getName() + "35 8 0");
 
             }
 

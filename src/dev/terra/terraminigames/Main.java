@@ -2,7 +2,6 @@ package dev.terra.terraminigames;
 
 import dev.terra.terraminigames.commands.Kills;
 import dev.terra.terraminigames.events.*;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -23,12 +22,12 @@ public class Main extends JavaPlugin {
 
         this.getCommand("kills").setExecutor(new Kills(this));
 
-        System.out.println(ChatColor.GREEN "TerraPVPArena has started");
+        System.out.println("TerraPVPArena has started");
     }
 
     @Override
     public void onDisable() {
-        System.out.println(ChatColor.RED "TerraPVPArena has stopped");
+        System.out.println("TerraPVPArena has stopped");
     }
 
 }

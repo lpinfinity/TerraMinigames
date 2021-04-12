@@ -1,4 +1,4 @@
-package dev.terra.pvparena.events;
+package dev.terra.terraminigames.events;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;

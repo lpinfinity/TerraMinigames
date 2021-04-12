@@ -1,6 +1,6 @@
-package dev.terra.pvparena.commands;
+package dev.terra.terraminigames.commands;
 
-import dev.terra.pvparena.Main;
+import dev.terra.terraminigames.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

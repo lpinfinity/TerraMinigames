@@ -1,7 +1,7 @@
-package dev.terra.pvparena;
+package dev.terra.terraminigames;
 
-import dev.terra.pvparena.commands.Kills;
-import dev.terra.pvparena.events.*;
+import dev.terra.terraminigames.commands.Kills;
+import dev.terra.terraminigames.events.*;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 

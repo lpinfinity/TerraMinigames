@@ -21,6 +21,7 @@ public class Arena implements Listener {
         if (event.getCause() == EntityDamageByEntityEvent.DamageCause.ENTITY_ATTACK){
 
             time[Integer.parseInt(event.getEntity().getName())] = System.currentTimeMillis();
+            System.out.println(Integer.parseInt(event.getEntity().getName()));
 
             if (x == 16 && y == 8 && z >= -2 && z <= 3){
 

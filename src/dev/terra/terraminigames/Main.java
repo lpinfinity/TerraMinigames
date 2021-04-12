@@ -23,12 +23,12 @@ public class Main extends JavaPlugin {
 
         this.getCommand("kills").setExecutor(new Kills(this));
 
-        System.out.println(ChatColor.GREEN "TerraPVPArena has started");
+        System.out.println(ChatColor.GREEN + "TerraPVPArena has started");
     }
 
     @Override
     public void onDisable() {
-        System.out.println(ChatColor.RED "TerraPVPArena has stopped");
+        System.out.println(ChatColor.RED + "TerraPVPArena has stopped");
     }
 
 }

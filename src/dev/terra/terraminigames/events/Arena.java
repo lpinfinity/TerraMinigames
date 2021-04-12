@@ -8,6 +8,8 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class Arena implements Listener {
 
+    private static long[] time;
+
     @EventHandler
     public static void EntityDamageByEntityEvent(EntityDamageByEntityEvent event) {
 
@@ -16,16 +18,19 @@ public class Arena implements Listener {
         int y = entity.getLocation().getBlockY();
         int z = entity.getLocation().getBlockZ();
 
-
         if (event.getCause() == EntityDamageByEntityEvent.DamageCause.ENTITY_ATTACK){
+
+            time[Integer.parseInt(event.getEntity().getName())] = System.currentTimeMillis();
 
             if (x == 16 && y == 8 && z >= -2 && z <= 3){
 
+                if(time[Integer.parseInt(event.getEntity().getName())] < time[Integer.parseInt(event.getEntity().getName())] + 5000) {
 
-                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp " + event.getEntity().getName() + " 35 8 0");
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp " + event.getEntity().getName() + " 35 8 0");
+
+                }
 
             }
-
 
         }
 

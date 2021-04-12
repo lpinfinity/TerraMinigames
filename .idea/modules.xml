@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TerraPVPArena.iml" filepath="$PROJECT_DIR$/TerraPVPArena.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TerraMinigames/TerraMinigames.iml" filepath="$PROJECT_DIR$/TerraMinigames/TerraMinigames.iml" />
     </modules>
   </component>
 </project>

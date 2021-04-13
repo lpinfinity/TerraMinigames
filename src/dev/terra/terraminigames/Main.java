@@ -6,6 +6,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public class Main extends JavaPlugin {
 
     public FileConfiguration config = getConfig();
@@ -21,7 +23,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ToolsNoDamage(),this);
         getServer().getPluginManager().registerEvents(new Arena(),this);
 
-        this.getCommand("kills").setExecutor(new Kills(this));
+        Objects.requireNonNull(this.getCommand("kills")).setExecutor(new Kills(this));
 
         System.out.println(ChatColor.GREEN +  "TerraMinigamesMain has started");
     }

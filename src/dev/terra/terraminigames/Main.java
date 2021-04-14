@@ -2,6 +2,7 @@ package dev.terra.terraminigames;
 
 import dev.terra.terraminigames.commands.Kills;
 import dev.terra.terraminigames.events.*;
+import dev.terra.terraminigames.files.PlayerKillsManager;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -12,8 +13,12 @@ public class Main extends JavaPlugin {
 
     public FileConfiguration config = getConfig();
 
+    public PlayerKillsManager playerKills;
+
     @Override
     public void onEnable() {
+
+        this.playerKills = new PlayerKillsManager(this);
 
         getServer().getPluginManager().registerEvents(new enterarena(),this);
         getServer().getPluginManager().registerEvents(new welcomemessage(), this);

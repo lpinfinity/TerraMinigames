@@ -21,13 +21,18 @@ public class PlayerKillEvent implements Listener {
     @EventHandler
     public void onPlayerKill(PlayerDeathEvent event) {
         if(event.getEntityType().equals(EntityType.PLAYER)) {
-            if(main.playerKills.getConfig().getString(Objects.requireNonNull(event.getEntity().getKiller()).getUniqueId().toString()) == null) {
-                main.playerKills.getConfig().addDefault(event.getEntity().getKiller().getUniqueId().toString(), 1);
+            if(main.playerKills.getConfig().getString(("players." + (Objects.requireNonNull(event.getEntity().getKiller())).getUniqueId().toString())) == null) {
+                main.playerKills.getConfig().addDefault("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills", 1);
+                main.playerKills.getConfig().addDefault("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".name", event.getEntity().getKiller().getName());
                 System.out.println("Data for " + event.getEntity().getKiller().getUniqueId().toString() + " does not exist, creating entry now.");
                 main.playerKills.getConfig().options().copyDefaults(true);
             }else {
-                main.playerKills.getConfig().set(event.getEntity().getKiller().getUniqueId().toString(), Integer.parseInt(Objects.requireNonNull(main.config.getString(event.getEntity().getKiller().getUniqueId().toString()))) + 1);
+                main.playerKills.getConfig().set("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills", Integer.parseInt(Objects.requireNonNull(main.config.getString("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills"))) + 1);
                 System.out.println(event.getEntity().getKiller().getUniqueId().toString());
+
+                if(!event.getEntity().getName().toString().equals(main.playerKills.getConfig().getString(("players." + (Objects.requireNonNull(event.getEntity().getKiller())).getUniqueId().toString()))))
+                    main.playerKills.getConfig().addDefault("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".name", event.getEntity().getKiller().getName());
+
             }
             main.playerKills.saveConfig();
             Objects.requireNonNull(event.getEntity().getKiller().getPlayer()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));

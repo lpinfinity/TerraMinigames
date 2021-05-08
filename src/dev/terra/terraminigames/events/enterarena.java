@@ -1,5 +1,8 @@
 package dev.terra.terraminigames.events;
 
+import com.SirBlobman.combatlogx.api.ICombatLogX;
+import com.SirBlobman.combatlogx.api.utility.ICombatManager;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -27,6 +30,13 @@ public class enterarena implements Listener {
                 player.getInventory().setLeggings(new ItemStack(Material.IRON_LEGGINGS));
                 player.getInventory().setChestplate(new ItemStack(Material.IRON_CHESTPLATE));
                 player.getInventory().setHelmet(new ItemStack(Material.IRON_HELMET));
+
+                ICombatLogX plugin = (ICombatLogX) Bukkit.getPluginManager().getPlugin("CombatLogX");
+            assert plugin != null;
+            ICombatManager combatManager = plugin.getCombatManager();
+                if(combatManager.isInCombat(player)) {
+                    Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "tp " + player.getName() + " 34.5 8 0.5");
+                }
 
         }
 

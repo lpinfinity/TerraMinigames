@@ -22,12 +22,12 @@ public class Kills implements CommandExecutor {
             Player player = (Player) sender;
             if(command.getName().equalsIgnoreCase("kills")) {
                 if(args[0] == null) {
-                    player.sendMessage("You have " + main.config.getInt(player.getUniqueId().toString() + " kills."));
+                    player.sendMessage("You have " + main.playerKills.getConfig().getInt(player.getUniqueId().toString() + " kills."));
                 }else{
-                    player.sendMessage(args[0] + " has " + main.config.getInt(Bukkit.getServer().getPlayer(args[0]).getUniqueId().toString()) + " kills.");
+                    player.sendMessage(args[0] + " has " + main.playerKills.getConfig().getInt(Bukkit.getServer().getPlayer(args[0]).getUniqueId().toString()) + " kills.");
                 }
             }else{
-                System.out.println(args[0] + " has " + main.config.getInt(Bukkit.getServer().getPlayer(args[0]).getUniqueId().toString()) + " kills.");
+                System.out.println(args[0] + " has " + main.playerKills.getConfig().getInt(Bukkit.getServer().getPlayer(args[0]).getUniqueId().toString()) + " kills.");
             }
         }
 

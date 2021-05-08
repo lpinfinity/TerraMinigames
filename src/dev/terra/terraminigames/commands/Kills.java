@@ -23,7 +23,7 @@ public class Kills implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if(command.getName().equalsIgnoreCase("kills")) {
-                System.out.println(args[0]);
+                //System.out.println(args[0]);
                 //if(args[0] == null) {
                 //    player.sendMessage("You have " + main.playerKills.getConfig().getInt("players." + (Objects.requireNonNull(((Player) sender).getPlayer()).getUniqueId().toString()) + ".kills") + " kills.");
                 //}else{

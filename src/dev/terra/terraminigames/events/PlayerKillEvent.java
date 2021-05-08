@@ -27,14 +27,11 @@ public class PlayerKillEvent implements Listener {
                 System.out.println("Data for " + event.getEntity().getKiller().getUniqueId().toString() + " does not exist, creating entry now.");
                 main.playerKills.getConfig().options().copyDefaults(true);
             }else {
-                System.out.println("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills");
-                System.out.println(main.config.getString("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills"));
-                main.playerKills.getConfig().set("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills", Integer.parseInt(Objects.requireNonNull(main.config.getString("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills"))) + 1);
+                main.playerKills.getConfig().set("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills", Integer.parseInt(Objects.requireNonNull(main.playerKills.getConfig().getString("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills"))) + 1);
                 System.out.println(event.getEntity().getKiller().getUniqueId().toString());
 
-                if(!event.getEntity().getName().toString().equals(main.playerKills.getConfig().getString(("players." + (Objects.requireNonNull(event.getEntity().getKiller())).getUniqueId().toString()))))
+                if(!event.getEntity().getName().equals(main.playerKills.getConfig().getString(("players." + (Objects.requireNonNull(event.getEntity().getKiller())).getUniqueId().toString()))))
                     main.playerKills.getConfig().addDefault("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".name", event.getEntity().getKiller().getName());
-
             }
             main.playerKills.saveConfig();
             Objects.requireNonNull(event.getEntity().getKiller().getPlayer()).addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 100, 2));

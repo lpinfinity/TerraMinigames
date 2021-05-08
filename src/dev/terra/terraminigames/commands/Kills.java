@@ -30,7 +30,7 @@ public class Kills implements CommandExecutor {
                     player.sendMessage(args[0] + " has " + main.playerKills.getConfig().getInt("players." + (Objects.requireNonNull(Bukkit.getPlayer(args[0])).getUniqueId().toString()) + ".kills") + " kills.");
                 }
             }else{
-                System.out.println(args[0] + " has " + main.playerKills.getConfig().getInt("players." + (Objects.requireNonNull(Bukkit.getPlayer(args[0])).getUniqueId().toString()) + ".kills") + " kills.");
+                //System.out.println(args[0] + " has " + main.playerKills.getConfig().getInt("players." + (Objects.requireNonNull(Bukkit.getPlayer(args[0])).getUniqueId().toString()) + ".kills") + " kills.");
             }
         }
 

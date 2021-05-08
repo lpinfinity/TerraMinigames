@@ -23,7 +23,7 @@ public class Kills implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if(command.getName().equalsIgnoreCase("kills")) {
-                if(args[0].contentEquals("")) {
+                if(args[0].length() == 0) {
                     player.sendMessage("You have " + main.playerKills.getConfig().getInt("players." + (Objects.requireNonNull(((Player) sender).getPlayer()).getUniqueId().toString()) + ".kills") + " kills.");
                 }else{
                     player.sendMessage(args[0] + " has " + main.playerKills.getConfig().getInt("players." + (Objects.requireNonNull(Bukkit.getPlayer(args[0])).getUniqueId().toString()) + ".kills") + " kills.");

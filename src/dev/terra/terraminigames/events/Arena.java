@@ -8,7 +8,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 public class Arena implements Listener {
 
-    private static long[] time;
+    /*private static long[] time;
 
     @EventHandler
     public static void EntityDamageByEntityEvent(EntityDamageByEntityEvent event) {
@@ -35,6 +35,6 @@ public class Arena implements Listener {
 
         }
 
-    }
+    }*/
 
 }

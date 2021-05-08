@@ -27,6 +27,8 @@ public class PlayerKillEvent implements Listener {
                 System.out.println("Data for " + event.getEntity().getKiller().getUniqueId().toString() + " does not exist, creating entry now.");
                 main.playerKills.getConfig().options().copyDefaults(true);
             }else {
+                System.out.println("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills");
+                System.out.println(Integer.parseInt(Objects.requireNonNull(main.config.getString("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills"))));
                 main.playerKills.getConfig().set("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills", Integer.parseInt(Objects.requireNonNull(main.config.getString("players." + (event.getEntity().getKiller().getUniqueId().toString()) + ".kills"))) + 1);
                 System.out.println(event.getEntity().getKiller().getUniqueId().toString());
 

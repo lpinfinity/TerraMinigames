@@ -30,7 +30,6 @@ public class Kills implements CommandExecutor {
                 }
             }
         }
-
         return false;
     }
 }

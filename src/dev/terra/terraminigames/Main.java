@@ -1,5 +1,6 @@
 package dev.terra.terraminigames;
 
+import dev.terra.terraminigames.commands.Hub;
 import dev.terra.terraminigames.commands.Kills;
 import dev.terra.terraminigames.events.*;
 import dev.terra.terraminigames.files.PlayerKillsManager;
@@ -29,6 +30,8 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Arena(),this);
 
         Objects.requireNonNull(this.getCommand("kills")).setExecutor(new Kills(this));
+        Objects.requireNonNull(this.getCommand("hub")).setExecutor(new Hub());
+        Objects.requireNonNull(this.getCommand("lobby")).setExecutor(new Hub());
 
         System.out.println(ChatColor.GREEN +  "TerraMinigamesMain has started");
     }

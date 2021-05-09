@@ -33,6 +33,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ToolsNoDamage(),this);
         getServer().getPluginManager().registerEvents(new Arena(),this);
         getServer().getPluginManager().registerEvents(new InteractCancel(this), this);
+        getServer().getPluginManager().registerEvents(new Antidropitem(), this);
 
         Objects.requireNonNull(this.getCommand("kills")).setExecutor(new Kills(this));
         Objects.requireNonNull(this.getCommand("hub")).setExecutor(new Hub());

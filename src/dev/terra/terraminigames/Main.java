@@ -20,7 +20,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
 
         config.addDefault("interact", "true");
-        saveDefaultConfig();
+        config.options().copyDefaults(true);
         saveConfig();
 
         this.playerKills = new PlayerKillsManager(this);

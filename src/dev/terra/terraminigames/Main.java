@@ -28,6 +28,7 @@ public class Main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Lobby(),this);
         getServer().getPluginManager().registerEvents(new ToolsNoDamage(),this);
         getServer().getPluginManager().registerEvents(new Arena(),this);
+        getServer().getPluginManager().registerEvents(new InteractCancel(), this);
 
         Objects.requireNonNull(this.getCommand("kills")).setExecutor(new Kills(this));
         Objects.requireNonNull(this.getCommand("hub")).setExecutor(new Hub());

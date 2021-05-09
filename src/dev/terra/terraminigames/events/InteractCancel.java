@@ -1,24 +1,41 @@
 package dev.terra.terraminigames.events;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.ItemFrame;
+import dev.terra.terraminigames.Main;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
 public class InteractCancel implements Listener {
 
-    NamespacedKey namespacedKey = NamespacedKey.minecraft("item_frame");
+    private final Main main;
+
+    public InteractCancel(Main main) {
+        this.main = main;
+    }
 
     @EventHandler
-    public void onPlayerInteraction(PlayerInteractEntityEvent event) {
+    public void onPlayerInteractionEntity(PlayerInteractEntityEvent event) {
+        if(main.config.getBoolean("interact")) {
+            event.setCancelled(true);
+        }
 
-        event.setCancelled(true);
+    }
 
+    @EventHandler
+    public void onPlayerInteractionAtEntity(PlayerInteractAtEntityEvent event) {
+        if(main.config.getBoolean("interact")) {
+            if(event.getRightClicked() != event.getPlayer())
+                event.setCancelled(true);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerInteraction(PlayerInteractEvent event) {
+        if(main.config.getBoolean("interact")) {
+            event.setCancelled(true);
+        }
     }
 
 }

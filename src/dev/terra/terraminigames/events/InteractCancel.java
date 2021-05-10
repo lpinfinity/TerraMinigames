@@ -17,7 +17,7 @@ public class InteractCancel implements Listener {
 
     @EventHandler
     public void onPlayerInteractionEntity(PlayerInteractEntityEvent event) {
-        if(false) {
+        if(true) {
             event.setCancelled(true);
         }
 
@@ -25,7 +25,7 @@ public class InteractCancel implements Listener {
 
     @EventHandler
     public void onPlayerInteractionAtEntity(PlayerInteractAtEntityEvent event) {
-        if(false) {
+        if(true) {
             if(event.getRightClicked() != event.getPlayer())
                 event.setCancelled(true);
         }
@@ -33,7 +33,7 @@ public class InteractCancel implements Listener {
 
     @EventHandler
     public void onPlayerInteraction(PlayerInteractEvent event) {
-        if(false) {
+        if(true) {
             event.setCancelled(true);
         }
     }

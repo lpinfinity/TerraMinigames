@@ -17,6 +17,7 @@ public class welcomemessage implements Listener {
         player.sendMessage(ChatColor.GREEN + "Welcome to the Terra Minegames Server" );
         player.sendMessage(ChatColor.GREEN + "Step on pressure plates next to Minegames to join" );
         player.sendMessage(ChatColor.GREEN + "Do /hub to Teleport to the hub" );
+        player.sendMessage(ChatColor.GREEN + "Do /SMP to teleport to the Terra SMP");
 
         Objects.requireNonNull(event.getPlayer()).getInventory().clear();
 
